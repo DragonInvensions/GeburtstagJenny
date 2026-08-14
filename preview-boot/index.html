@@ -13,12 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --party-teal: #3EC6C9;
-            --party-teal-light: #8FE0E2;
-            --party-coral: #F07360;
-            --party-sun: #F5C544;
-            --party-navy: #1E2B5E;
-            --party-bg: #0A1130;
+            --party-pink: #FF4D9D;
+            --party-gold: #FFD166;
+            --party-violet: #B388FF;
+            --party-cyan: #4DE1FF;
+            --party-bg: #0b0714;
         }
 
         * {
@@ -31,7 +30,7 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background: radial-gradient(ellipse at top, #14204f 0%, var(--party-bg) 60%);
+            background: radial-gradient(ellipse at top, #170d26 0%, var(--party-bg) 60%);
             color: white;
             display: flex;
             flex-direction: column;
@@ -49,7 +48,7 @@
             inset: 0;
             z-index: -3;
             filter: blur(90px);
-            opacity: 0.35;
+            opacity: 0.45;
         }
 
         .blob {
@@ -58,9 +57,9 @@
             animation: blobmove 18s infinite alternate ease-in-out;
         }
 
-        .blob-1 { width: 340px; height: 340px; background: var(--party-teal);  top: 8%;  left: 8%; }
-        .blob-2 { width: 420px; height: 420px; background: var(--party-coral); bottom: 5%; right: 5%; animation-delay: -6s; }
-        .blob-3 { width: 260px; height: 260px; background: var(--party-sun);   top: 55%; left: -60px; animation-delay: -12s; }
+        .blob-1 { width: 340px; height: 340px; background: var(--party-pink);   top: 8%;  left: 8%; }
+        .blob-2 { width: 420px; height: 420px; background: var(--party-violet); bottom: 5%; right: 5%; animation-delay: -6s; }
+        .blob-3 { width: 260px; height: 260px; background: var(--party-gold);   top: 55%; left: -60px; animation-delay: -12s; }
 
         @keyframes blobmove {
             from { transform: translate(0, 0) scale(1); }
@@ -82,7 +81,7 @@
             width: 46px;
             height: 58px;
             border-radius: 50% 50% 48% 48%;
-            opacity: 0.5;
+            opacity: 0.55;
             animation: rise linear infinite;
         }
 
@@ -141,12 +140,12 @@
         }
 
         .wave-back {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,38 Q80,10 160,38 T320,38 T480,38 T640,38 L640,88 L0,88 Z' fill='%233EC6C9' fill-opacity='0.22'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,38 Q80,10 160,38 T320,38 T480,38 T640,38 L640,88 L0,88 Z' fill='%234DE1FF' fill-opacity='0.2'/%3E%3C/svg%3E");
             animation: wavemove 13s linear infinite;
         }
 
         .wave-front {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,50 Q80,24 160,50 T320,50 T480,50 T640,50 L640,88 L0,88 Z' fill='%233EC6C9' fill-opacity='0.4'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,50 Q80,24 160,50 T320,50 T480,50 T640,50 L640,88 L0,88 Z' fill='%234DE1FF' fill-opacity='0.38'/%3E%3C/svg%3E");
             animation: wavemove 8s linear infinite;
         }
 
@@ -196,10 +195,10 @@
             background: rgba(255, 255, 255, 0.055);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border: 2px solid rgba(143, 224, 226, 0.18);
+            border: 2px solid rgba(255, 255, 255, 0.12);
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55),
-                        0 0 40px rgba(62, 198, 201, 0.08) inset;
+                        0 0 40px rgba(255, 77, 157, 0.08) inset;
             position: relative;
             z-index: 1;
             margin-bottom: 1rem;
@@ -210,7 +209,7 @@
             max-width: 170px;
             border-radius: 22px;
             margin-bottom: 1rem;
-            filter: drop-shadow(0 0 14px rgba(62, 198, 201, 0.55));
+            filter: drop-shadow(0 0 14px rgba(255, 77, 157, 0.55));
             animation: logofloat 5s ease-in-out infinite;
         }
 
@@ -224,7 +223,7 @@
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            background: linear-gradient(90deg, var(--party-teal), var(--party-sun), var(--party-coral), var(--party-teal-light), var(--party-teal));
+            background: linear-gradient(90deg, var(--party-pink), var(--party-gold), var(--party-violet), var(--party-cyan), var(--party-pink));
             background-size: 300% 100%;
             -webkit-background-clip: text;
             background-clip: text;
@@ -261,8 +260,8 @@
             font-weight: 700;
             line-height: 1.35;
             transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.4);
-            color: var(--party-teal);
-            text-shadow: 0 0 18px rgba(62, 198, 201, 0.35);
+            color: var(--party-pink);
+            text-shadow: 0 0 18px rgba(255, 77, 157, 0.35);
         }
 
         #condition-text {
@@ -270,7 +269,7 @@
             font-weight: 400;
             line-height: 1.4;
             opacity: 0.65;
-            color: #cfe0ee;
+            color: #d9cfee;
             transition: all 0.45s ease;
             max-width: 85%;
             font-style: italic;
@@ -290,7 +289,7 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, var(--party-coral), #f79a86);
+            background: linear-gradient(135deg, var(--party-pink), #ff7ab8);
             color: white;
             border: none;
             padding: 0.8rem 1.6rem;
@@ -302,26 +301,26 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 8px 18px rgba(240, 115, 96, 0.35);
+            box-shadow: 0 8px 18px rgba(255, 77, 157, 0.35);
             width: 100%;
             max-width: 270px;
             animation: btnpulse 2.6s ease-in-out infinite;
         }
 
         @keyframes btnpulse {
-            0%, 100% { box-shadow: 0 8px 18px rgba(240, 115, 96, 0.35); }
-            50%      { box-shadow: 0 8px 30px rgba(240, 115, 96, 0.65); }
+            0%, 100% { box-shadow: 0 8px 18px rgba(255, 77, 157, 0.35); }
+            50%      { box-shadow: 0 8px 30px rgba(255, 77, 157, 0.65); }
         }
 
         .btn:hover {
             transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 12px 28px rgba(240, 115, 96, 0.6);
+            box-shadow: 0 12px 28px rgba(255, 77, 157, 0.6);
         }
 
         .btn:active { transform: translateY(0) scale(0.97); }
 
         .btn:disabled {
-            background: #2c3358;
+            background: #3a3346;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
@@ -360,8 +359,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1.3rem;
-            background: rgba(10, 17, 48, 0.78);
+            gap: 1.4rem;
+            background: rgba(11, 7, 20, 0.72);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             transition: opacity 0.6s ease, visibility 0.6s;
@@ -374,24 +373,17 @@
             pointer-events: none;
         }
 
-        .start-mascot {
-            width: clamp(130px, 32vw, 190px);
-            height: auto;
-            animation: logofloat 4s ease-in-out infinite;
-            filter: drop-shadow(0 10px 24px rgba(62, 198, 201, 0.35));
-        }
-
         .start-title {
             font-size: clamp(3rem, 14vw, 6rem);
             font-weight: 700;
             line-height: 1;
-            background: linear-gradient(90deg, var(--party-teal), var(--party-sun), var(--party-coral), var(--party-teal-light), var(--party-teal));
+            background: linear-gradient(90deg, var(--party-pink), var(--party-gold), var(--party-violet), var(--party-cyan), var(--party-pink));
             background-size: 300% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: shimmer 5s linear infinite;
-            filter: drop-shadow(0 0 24px rgba(62, 198, 201, 0.4));
+            filter: drop-shadow(0 0 24px rgba(255, 77, 157, 0.4));
         }
 
         .start-sub {
@@ -399,6 +391,12 @@
             opacity: 0.85;
             max-width: 420px;
             line-height: 1.5;
+        }
+
+        .start-emoji {
+            font-size: 2.2rem;
+            letter-spacing: 0.4rem;
+            animation: logofloat 4s ease-in-out infinite;
         }
 
         /* ===== SmartTap Branding ===== */
@@ -477,7 +475,7 @@
     <canvas id="confetti-canvas"></canvas>
 
     <div id="start-overlay">
-        <img src="anhaenger.svg" alt="Jennys Party-Anhänger" class="start-mascot">
+        <div class="start-emoji">🎂 🥂 🎈</div>
         <h1 class="start-title">JENNY</h1>
         <p class="start-sub">wird gefeiert! Zieh deine Mission, lerne die anderen Gäste kennen und mach diesen Abend unvergesslich.</p>
         <button id="start-btn" class="btn">🎉 Erste Mission ziehen</button>
@@ -511,9 +509,9 @@
 
     <script>
         // ===== Ballons erzeugen =====
-        const balloonColors = ['#3EC6C9', '#F5C544', '#F07360', '#8FE0E2', '#FFFFFF', '#F2B233'];
+        const balloonColors = ['#FF4D9D', '#FFD166', '#B388FF', '#4DE1FF', '#7CFFB2', '#FF8A5C'];
         const balloonHolder = document.getElementById('balloons');
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 9; i++) {
             const b = document.createElement('div');
             b.className = 'balloon';
             const c = balloonColors[i % balloonColors.length];
@@ -622,7 +620,7 @@
             return { main: text, condition: '' };
         }
 
-        const textColors = ['#3EC6C9', '#F5C544', '#F07360', '#8FE0E2', '#FFFFFF'];
+        const textColors = ['#FF4D9D', '#FFD166', '#B388FF', '#4DE1FF', '#7CFFB2'];
 
         function updateDisplay(isSkip = false) {
             if (questions.length === 0) return;
