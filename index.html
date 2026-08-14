@@ -39,7 +39,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px 0 150px;
         }
 
         /* ===== Hintergrund: weiche Farb-Blobs ===== */
@@ -114,6 +114,69 @@
             50%  { transform: translateY(-56vh) translateX(-18px) rotate(-4deg); }
             75%  { transform: translateY(-84vh) translateX(20px) rotate(3deg); }
             100% { transform: translateY(-118vh) translateX(-10px) rotate(-2deg); }
+        }
+
+        /* ===== Ozean: Wellen + segelnder Anhaenger ===== */
+        .ocean {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 200px;
+            z-index: 5;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(200% + 640px);
+            height: 100%;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-size: 640px 88px;
+        }
+
+        .wave-back {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,38 Q80,10 160,38 T320,38 T480,38 T640,38 L640,88 L0,88 Z' fill='%234DE1FF' fill-opacity='0.2'/%3E%3C/svg%3E");
+            animation: wavemove 13s linear infinite;
+        }
+
+        .wave-front {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 88'%3E%3Cpath d='M0,50 Q80,24 160,50 T320,50 T480,50 T640,50 L640,88 L0,88 Z' fill='%234DE1FF' fill-opacity='0.38'/%3E%3C/svg%3E");
+            animation: wavemove 8s linear infinite;
+        }
+
+        @keyframes wavemove {
+            to { transform: translateX(-640px); }
+        }
+
+        .sailor {
+            position: absolute;
+            bottom: 24px;
+            left: 0;
+            animation: sail 30s linear infinite;
+            will-change: transform;
+        }
+
+        .mascot-boat {
+            width: 120px;
+            height: auto;
+            display: block;
+            animation: rock 3.4s ease-in-out infinite alternate;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+        }
+
+        @keyframes sail {
+            from { transform: translateX(-160px); }
+            to   { transform: translateX(100vw); }
+        }
+
+        @keyframes rock {
+            from { transform: rotate(-4deg) translateY(0); }
+            to   { transform: rotate(4deg) translateY(-7px); }
         }
 
         /* ===== Konfetti-Canvas ===== */
@@ -382,6 +445,9 @@
             .container { padding: 1.5rem 1rem; }
             #question-text { font-size: 1.3rem; }
             .balloon { width: 36px; height: 46px; }
+            .mascot-boat { width: 96px; }
+            .ocean { height: 165px; }
+            body { padding-bottom: 125px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -397,6 +463,15 @@
     </div>
 
     <div class="balloons" id="balloons"></div>
+
+    <div class="ocean">
+        <div class="wave wave-back"></div>
+        <div class="sailor">
+            <img src="anhaenger.svg" alt="" class="mascot-boat">
+        </div>
+        <div class="wave wave-front"></div>
+    </div>
+
     <canvas id="confetti-canvas"></canvas>
 
     <div id="start-overlay">
