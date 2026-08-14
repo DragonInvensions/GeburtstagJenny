@@ -1,0 +1,7 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Formloses Issue
+    url: https://github.com/DragonInvensions
+    about: >-
+      Vorlagen sind nur ein Angebot. Ein formloser Satz genügt auch — der Autopilot
+      nimmt sich jedes offene Issue vor, das nicht mit "kein-autopilot" gekennzeichnet ist.
