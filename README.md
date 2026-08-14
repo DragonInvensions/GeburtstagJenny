@@ -11,4 +11,4 @@ in Schwung.
 Alle Missionen stehen in [`questions.json`](questions.json) – einfach Einträge ändern,
 hinzufügen oder löschen und pushen. Der Pages-Workflow deployt automatisch.
 
-Unterstützt von [SmartTap](https://smarttap-offical.de/).
+Unterstützt von [SmartTap](https://smarttap-official.de/).
