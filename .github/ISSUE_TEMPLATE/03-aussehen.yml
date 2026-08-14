@@ -1,0 +1,52 @@
+name: Aussehen und Gefühl
+description: Design, Bewegung, Bilder, Ton — alles, was sich sehen oder hören lässt.
+title: "[Design] "
+labels: ["design"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Für diese Issues greifen die Skills `frontend-design`, `animationen` und
+        `higgsfield-medien`. Du musst nichts davon kennen — beschreib einfach die Wirkung,
+        die du willst.
+  - type: textarea
+    id: wirkung
+    attributes:
+      label: Welche Wirkung soll es haben?
+      description: Lieber Gefühl als Fachbegriff.
+      placeholder: "Der Moment des Anstoßens soll sich wie ein kleiner Feiertag anfühlen — kurz, warm, nicht kitschig."
+    validations:
+      required: true
+  - type: input
+    id: wo
+    attributes:
+      label: Wo genau?
+      placeholder: "Startbildschirm der App, direkt nach dem Anstoßen"
+    validations:
+      required: false
+  - type: textarea
+    id: vorbild
+    attributes:
+      label: Vorbilder oder Tabus
+      description: Links, Screenshots, oder was auf keinen Fall passieren soll.
+    validations:
+      required: false
+  - type: dropdown
+    id: medien
+    attributes:
+      label: Sollen dafür Medien erzeugt werden?
+      options:
+        - "Nein, nur Gestaltung und Bewegung"
+        - "Ja, Bilder"
+        - "Ja, ein kurzes Video"
+        - "Ja, Ton oder Stimme"
+        - "Entscheide selbst"
+      default: 0
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Bei sichtbaren Änderungen macht der Autopilot vor dem Pull Request einen Screenshot
+        zur Kontrolle. Soll er die Finger davon lassen: Label **`kein-autopilot`** setzen.

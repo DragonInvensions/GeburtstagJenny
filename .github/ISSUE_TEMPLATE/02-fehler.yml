@@ -1,0 +1,43 @@
+name: Fehler
+description: Etwas funktioniert nicht wie erwartet.
+title: "[Fehler] "
+labels: ["fehler"]
+body:
+  - type: textarea
+    id: was
+    attributes:
+      label: Was passiert?
+      placeholder: "Nach dem Anstoßen bleibt der Bildschirm hängen, es kommt kein Ton."
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was hättest du erwartet?
+    validations:
+      required: false
+  - type: textarea
+    id: weg
+    attributes:
+      label: Wie kommt man dahin?
+      description: Die Schritte, mit denen sich der Fehler zuverlässig zeigt.
+      placeholder: |
+        1. App auf dem Handy öffnen
+        2. Auf "Anstoßen" tippen
+        3. Warten
+    validations:
+      required: false
+  - type: input
+    id: umgebung
+    attributes:
+      label: Womit?
+      description: Gerät, Browser, Umgebung (Test oder Produktion).
+      placeholder: "iPhone, Safari, Test-Umgebung"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Der Autopilot sucht die Ursache, behebt sie und reicht einen Pull Request ein.
+        Soll er die Finger davon lassen: Label **`kein-autopilot`** setzen.
